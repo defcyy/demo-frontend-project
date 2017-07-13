@@ -11,7 +11,7 @@ node('demo') {
             version = '8.1-alpine'
             workspacePath = '.'
             containerPath = '/app'
-            command = 'npm run build'
+            command = 'npm i && npm run build && chown -R 1000:1000 node_modules'
             envVariables = [[name: 'REACT_APP_API', value: 'http://demo-project']]
         }
     }
